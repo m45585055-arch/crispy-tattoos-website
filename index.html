@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crispy Tattoos N Body Piercings</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0a0a0a;
+color:white;
+scroll-behavior:smooth;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:black;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+header img{
+height:50px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+height:90vh;
+background:url("images/image1.jpg") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:10px;
+}
+
+.section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+color:gold;
+margin-bottom:20px;
+text-align:center;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#151515;
+border-radius:12px;
+overflow:hidden;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+}
+
+.price{
+color:gold;
+font-size:20px;
+margin:10px 0;
+}
+
+button{
+background:gold;
+border:none;
+padding:12px 20px;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+form{
+display:grid;
+gap:15px;
+max-width:500px;
+margin:auto;
+}
+
+input,select,textarea{
+padding:12px;
+border-radius:5px;
+border:none;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+font-size:20px;
+text-decoration:none;
+}
+
+.instagram{
+text-align:center;
+margin-top:20px;
+}
+
+.instagram a{
+background:#E1306C;
+padding:10px 20px;
+border-radius:5px;
+color:white;
+text-decoration:none;
+}
+
+.map{
+margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="images/logo.jpg">
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Crispy Tattoos N Body Piercings</h1>
+
+</section>
+
+<section class="section" id="about">
+
+<h2>About Us</h2>
+
+<p style="text-align:center;max-width:700px;margin:auto;">
+Crispy Tattoos N Body Piercings is a modern tattoo studio based in Sunnyside. 
+We specialise in clean, professional tattoos and safe piercings that allow 
+people to express their individuality. Our artists focus on precision, hygiene 
+and creativity to deliver tattoos that look crisp and last a lifetime.
+</p>
+
+</section>
+
+<section class="section" id="services">
+
+<h2>Our Services</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="images/tattoo1.jpg">
+<h3>Small Tattoo</h3>
+<p class="price">R150</p>
+<button onclick="order('Small Tattoo R150')">Order</button>
+</div>
+
+<div class="card">
+<img src="images/tattoo2.jpg">
+<h3>Big Tattoo</h3>
+<p class="price">From R250</p>
+<button onclick="order('Big Tattoo From R250')">Order</button>
+</div>
+
+<div class="card">
+<img src="images/tattoo3.jpg">
+<h3>Nose Ring</h3>
+<p class="price">R100</p>
+<button onclick="order('Nose Ring R100')">Order</button>
+</div>
+
+<div class="card">
+<img src="images/tattoo1.jpg">
+<h3>Earlobe Piercing</h3>
+<p class="price">R100 - R150</p>
+<button onclick="order('Earlobe Piercing')">Order</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="gallery">
+
+<h2>Tattoo Gallery</h2>
+
+<div class="gallery">
+
+<img src="images/tattoo1.jpg">
+<img src="images/tattoo2.jpg">
+<img src="images/tattoo3.jpg">
+<img src="images/tattoo1.jpg">
+<img src="images/tattoo2.jpg">
+<img src="images/tattoo3.jpg">
+
+</div>
+
+</section>
+
+<section class="section" id="booking">
+
+<h2>Book Appointment</h2>
+
+<form onsubmit="sendOrder(); return false;">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<select id="service">
+<option>Small Tattoo</option>
+<option>Big Tattoo</option>
+<option>Nose Ring</option>
+<option>Earlobe Piercing</option>
+</select>
+
+<textarea id="details" placeholder="Describe the tattoo you want"></textarea>
+
+<button type="submit">Send Booking</button>
+
+</form>
+
+</section>
+
+<section class="section" id="contact">
+
+<h2>Contact</h2>
+
+<p style="text-align:center;">
+Phone / WhatsApp: 0849519698<br>
+Address: 215 Robert Sobukwe Street, Sunnyside<br>
+House Calls Available
+</p>
+
+<div class="instagram">
+<a href="#">Visit Instagram</a>
+</div>
+
+<div class="map">
+
+<iframe
+width="100%"
+height="300"
+style="border:0"
+loading="lazy"
+allowfullscreen
+src="https://maps.google.com/maps?q=Robert%20Sobukwe%20Street%20Sunnyside&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Crispy Tattoos N Body Piercings
+
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/27849519698">WhatsApp</a>
+
+<script>
+
+function order(service){
+
+let message="Hello I want to order: "+service;
+
+let url="https://wa.me/27849519698?text="+encodeURIComponent(message);
+
+window.open(url);
+
+}
+
+function sendOrder(){
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let service=document.getElementById("service").value;
+let details=document.getElementById("details").value;
+
+let message="Tattoo Booking:%0A";
+
+message+="Name: "+name+"%0A";
+message+="Phone: "+phone+"%0A";
+message+="Service: "+service+"%0A";
+message+="Details: "+details;
+
+window.open("https://wa.me/27849519698?text="+message);
+
+}
+
+</script>
+
+</body>
+</html>
